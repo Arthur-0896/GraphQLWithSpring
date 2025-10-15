@@ -10,14 +10,14 @@
    - Clients can specify the exact fields they want.
    - This avoids over-fetching (getting too much data) and under-fetching (needing multiple requests to get related data).
 
-2. Single endpoint
-  - Unlike REST (which often has many endpoints like /users, /users/:id/orders, etc.), GraphQL typically uses one endpoint for all queries and mutations.
+### 2. Single endpoint
+   - Unlike REST (which often has many endpoints like /users, /users/:id/orders, etc.), GraphQL typically uses one endpoint for all queries and mutations.
 
-3. Strongly typed schema
-  - The schema acts as a contract between client and server, making APIs self-documenting and easier to validate and evolve safely.
+### 3. Strongly typed schema
+   - The schema acts as a contract between client and server, making APIs self-documenting and easier to validate and evolve safely.
 
-4. Faster development and iteration
-  - Frontend developers can modify queries without needing backend changes, as long as the data exists in the schema.
+### 4. Faster development and iteration
+   - Frontend developers can modify queries without needing backend changes, as long as the data exists in the schema.
 
 And Much more...
 
