@@ -2,11 +2,10 @@ package com.gqlws.data;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
 /*
 CREATE TABLE ORDERS (
@@ -16,15 +15,18 @@ CREATE TABLE ORDERS (
 	);*/
 
 @Entity
-public class Order {
-	
+@Table(name = "ORDERS")
+public class Orders {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ORDERS")
-	private int orderId;
-	
+	@Column(name = "ORDER_ID")
+	private String orderId;
+
 	@ManyToOne
-	@JoinColumn(name = "CUSTOMER_ID" , nullable = false, updatable = false)
+	@JoinColumn(name = "CUSTOMER_ID", nullable = false, updatable = false)
 	private Customer customer;
-	
+
+	@ManyToOne
+	@JoinColumn(name = "SALESPERSON_ID", updatable = false, nullable = false)
+	private SalesPerson salesPerson;
 }
