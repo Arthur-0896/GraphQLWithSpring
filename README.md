@@ -6,9 +6,9 @@
 > [GraphQL](https://graphql.org/) is an open‑source query language for APIs and a server‑side runtime. It provides a strongly‑typed schema to define relationships between data, making APIs more flexible and predictable. And it isn’t tied to a specific database or storage engine — it works with your existing code and data, making it easier to evolve APIs over time.
 
 ## Why GraphQL?
-1. Fetch exactly what you need — nothing more, nothing less
-  - Clients can specify the exact fields they want.
-  - This avoids over-fetching (getting too much data) and under-fetching (needing multiple requests to get related data).
+### 1. Fetch exactly what you need — nothing more, nothing less
+       - Clients can specify the exact fields they want.
+       - This avoids over-fetching (getting too much data) and under-fetching (needing multiple requests to get related data).
 
 2. Single endpoint
   - Unlike REST (which often has many endpoints like /users, /users/:id/orders, etc.), GraphQL typically uses one endpoint for all queries and mutations.
