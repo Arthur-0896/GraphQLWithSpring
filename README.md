@@ -7,8 +7,8 @@
 
 ## Why GraphQL?
 ### 1. Fetch exactly what you need — nothing more, nothing less
-       - Clients can specify the exact fields they want.
-       - This avoids over-fetching (getting too much data) and under-fetching (needing multiple requests to get related data).
+   - Clients can specify the exact fields they want.
+   - This avoids over-fetching (getting too much data) and under-fetching (needing multiple requests to get related data).
 
 2. Single endpoint
   - Unlike REST (which often has many endpoints like /users, /users/:id/orders, etc.), GraphQL typically uses one endpoint for all queries and mutations.
