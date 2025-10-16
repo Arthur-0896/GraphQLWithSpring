@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+## About the App:
+- A simple GraphQL ordering app created with Spring Boot by following LinkedIn tutorial 'Spring with GraphQL' by Frank P Moley III. 
+- Tutorial Link: [Spring with GraphQL by Frank P Moley III](https://www.linkedin.com/learning/spring-with-graphql)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What is GraphQL?
+> [GraphQL](https://graphql.org/) is an open‑source query language for APIs and a server‑side runtime. It provides a strongly‑typed schema to define relationships between data, making APIs more flexible and predictable. And it isn’t tied to a specific database or storage engine — it works with your existing code and data, making it easier to evolve APIs over time.
 
-## Available Scripts
+## Why GraphQL?
+### 1. Fetch exactly what you need — nothing more, nothing less
+   - Clients can specify the exact fields they want.
+   - This avoids over-fetching (getting too much data) and under-fetching (needing multiple requests to get related data).
 
-In the project directory, you can run:
+### 2. Single endpoint
+   - Unlike REST (which often has many endpoints like /users, /users/:id/orders, etc.), GraphQL typically uses one endpoint for all queries and mutations.
 
-### `npm start`
+### 3. Strongly typed schema
+   - The schema acts as a contract between client and server, making APIs self-documenting and easier to validate and evolve safely.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 4. Faster development and iteration
+   - Frontend developers can modify queries without needing backend changes, as long as the data exists in the schema.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+And Much more...
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## TODO
+- Create a UI that allows users to  fetch data using selectors on the front end.
