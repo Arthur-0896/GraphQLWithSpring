@@ -1,4 +1,4 @@
-### Application live [here](https://arthur-0896.github.io/GraphQLWithSpring/)
+### <ins>Application live [here](https://arthur-0896.github.io/GraphQLWithSpring/)</ins>
 
 ## About the App:
 - A simple GraphQL ordering app created with Spring Boot by following LinkedIn tutorial 'Spring with GraphQL' by Frank P Moley III. 
