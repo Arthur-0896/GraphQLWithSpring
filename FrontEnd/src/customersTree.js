@@ -14,7 +14,7 @@ import {
 
 // Use your Render backend URL here
 const axiosInstance = axios.create({
-  baseURL: "https://springboot-app-latest-r6w8.onrender.com/graphql",
+  baseURL: "https://springboot-app-latest-dhn8.onrender.com/graphql",
   headers: { "Content-Type": "application/json" },
 });
 
