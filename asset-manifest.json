@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/GraphQLWithSpring/FrontEnd/static/css/main.fb665e37.css",
-    "main.js": "/GraphQLWithSpring/FrontEnd/static/js/main.d877b89a.js",
-    "static/js/453.d644e9d9.chunk.js": "/GraphQLWithSpring/FrontEnd/static/js/453.d644e9d9.chunk.js",
-    "index.html": "/GraphQLWithSpring/FrontEnd/index.html",
-    "main.fb665e37.css.map": "/GraphQLWithSpring/FrontEnd/static/css/main.fb665e37.css.map",
-    "main.d877b89a.js.map": "/GraphQLWithSpring/FrontEnd/static/js/main.d877b89a.js.map",
-    "453.d644e9d9.chunk.js.map": "/GraphQLWithSpring/FrontEnd/static/js/453.d644e9d9.chunk.js.map"
+    "main.css": "/GraphQLWithSpring/static/css/main.fb665e37.css",
+    "main.js": "/GraphQLWithSpring/static/js/main.bf92ee8e.js",
+    "static/js/453.d644e9d9.chunk.js": "/GraphQLWithSpring/static/js/453.d644e9d9.chunk.js",
+    "index.html": "/GraphQLWithSpring/index.html",
+    "main.fb665e37.css.map": "/GraphQLWithSpring/static/css/main.fb665e37.css.map",
+    "main.bf92ee8e.js.map": "/GraphQLWithSpring/static/js/main.bf92ee8e.js.map",
+    "453.d644e9d9.chunk.js.map": "/GraphQLWithSpring/static/js/453.d644e9d9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fb665e37.css",
-    "static/js/main.d877b89a.js"
+    "static/js/main.bf92ee8e.js"
   ]
 }
