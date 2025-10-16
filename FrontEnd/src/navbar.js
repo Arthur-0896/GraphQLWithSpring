@@ -16,7 +16,7 @@ function HeaderNavbar() {
              React Bootstrap
              <img
               alt=""
-              src="/images/rb-logo.png"
+              src={`${process.env.PUBLIC_URL}/images/rb-logo.png`}
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -25,7 +25,7 @@ function HeaderNavbar() {
             GraphQL
             <img
               alt=""
-              src="/images/graphql-logo.png"
+              src={`${process.env.PUBLIC_URL}/images/graphql-logo.png`}
               width="30"
               height="30"
               className="d-inline-block align-top"
@@ -35,7 +35,7 @@ function HeaderNavbar() {
             Spring Boot
             <img
               alt=""
-              src="/images/Spring Boot logo.png"
+              src={`${process.env.PUBLIC_URL}/images/spring-boot-logo.png`}
               width="30"
               height="30"
               className="d-inline-block align-top"
