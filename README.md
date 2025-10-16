@@ -20,6 +20,3 @@
   - Frontend developers can modify queries without needing backend changes, as long as the data exists in the schema.
 
 And Much more...
-
-## TODO
-- Create a UI that allows users to  fetch data using selectors on the front end.
