@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import HeaderNavbar from './navbar';
+import Alert from 'react-bootstrap/Alert';
+import { useState } from 'react';
+import { Container } from 'react-bootstrap';
+import DropdownHierarchy from './customersTree';
 
 function App() {
+    const [show, setShow] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <HeaderNavbar />
+      <br />
+      <Container>
+      <Alert variant="info"  style={{textAlign: "center"}}>
+        
+          Go Ahead! Select any customer to lazily load more details about their orders.
+        
+      </Alert>
+      </Container>
+      <DropdownHierarchy />
     </div>
   );
 }
+
 
 export default App;
