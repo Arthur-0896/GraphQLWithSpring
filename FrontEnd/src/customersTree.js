@@ -12,6 +12,12 @@ import {
   Modal,
 } from "react-bootstrap";
 
+// Use your Render backend URL here
+const axiosInstance = axios.create({
+  baseURL: "https://springboot-app-latest-r6w8.onrender.com/graphql",
+  headers: { "Content-Type": "application/json" },
+});
+
 const DropdownHierarchy = () => {
   const [customers, setCustomers] = useState([]);
   const [orders, setOrders] = useState([]);
@@ -31,6 +37,7 @@ const DropdownHierarchy = () => {
   const [showQueryModal, setShowQueryModal] = useState(false);
   const [currentQuery, setCurrentQuery] = useState("");
 
+  // Fetch customers on load
   useEffect(() => {
     const fetchCustomers = async () => {
       const query = `
@@ -46,19 +53,16 @@ const DropdownHierarchy = () => {
       `;
       setCurrentQuery(query);
       try {
-        const res = await axios.post(
-          "http://localhost:8080/graphql",
-          { query },
-          { headers: { "Content-Type": "application/json" } }
-        );
+        const res = await axiosInstance.post("", { query });
         setCustomers(res.data.data.customers);
       } catch (err) {
-        console.error(err);
+        console.error("Fetch customers error:", err);
       }
     };
     fetchCustomers();
   }, []);
 
+  // Fetch orders when customer is selected
   useEffect(() => {
     if (!selectedCustomer) return;
     const query = `
@@ -75,11 +79,7 @@ const DropdownHierarchy = () => {
 
     const fetchOrders = async () => {
       try {
-        const res = await axios.post(
-          "https://springboot-app-latest-r6w8.onrender.com/graphql",
-          { query },
-          { headers: { "Content-Type": "application/json" } }
-        );
+        const res = await axiosInstance.post("", { query });
         setOrders(res.data.data.customerById.orders);
         setOrderLines([]);
         setProducts([]);
@@ -91,12 +91,13 @@ const DropdownHierarchy = () => {
         setOpenOrderLine(false);
         setOpenProduct(false);
       } catch (err) {
-        console.error(err);
+        console.error("Fetch orders error:", err);
       }
     };
     fetchOrders();
   }, [selectedCustomer]);
 
+  // Fetch order lines when order is selected
   useEffect(() => {
     if (!selectedOrder || !selectedCustomer) return;
     const query = `
@@ -123,11 +124,7 @@ const DropdownHierarchy = () => {
 
     const fetchOrderLines = async () => {
       try {
-        const res = await axios.post(
-          "http://localhost:8080/graphql",
-          { query },
-          { headers: { "Content-Type": "application/json" } }
-        );
+        const res = await axiosInstance.post("", { query });
         const orderData = res.data.data.customerById.orders.find(
           (o) => o.orderId === selectedOrder.orderId
         );
@@ -139,12 +136,13 @@ const DropdownHierarchy = () => {
         setOpenOrderLine(false);
         setOpenProduct(false);
       } catch (err) {
-        console.error(err);
+        console.error("Fetch order lines error:", err);
       }
     };
     fetchOrderLines();
   }, [selectedOrder, selectedCustomer]);
 
+  // Set product when order line is selected
   useEffect(() => {
     if (!selectedOrderLine) return;
     setProducts(selectedOrderLine.product ? [selectedOrderLine.product] : []);
@@ -167,7 +165,9 @@ const DropdownHierarchy = () => {
             <Card.Body>
               <Form.Select
                 onChange={(e) => {
-                  const customer = customers.find((c) => c.id === e.target.value);
+                  const customer = customers.find(
+                    (c) => String(c.id) === e.target.value
+                  );
                   setSelectedCustomer(customer);
                 }}
               >
@@ -383,8 +383,7 @@ const DropdownHierarchy = () => {
       {/* Query Modal */}
       <Modal show={showQueryModal} onHide={() => setShowQueryModal(false)} size="lg">
         <Modal.Header closeButton>
-          <Modal.Title>Current GraphQL Query
-          </Modal.Title>
+          <Modal.Title>Current GraphQL Query</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <pre>{currentQuery}</pre>
@@ -395,6 +394,7 @@ const DropdownHierarchy = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
       <Button
         variant="outline-dark"
         onClick={() => setShowQueryModal(true)}
