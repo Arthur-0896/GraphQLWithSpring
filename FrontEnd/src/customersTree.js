@@ -76,7 +76,7 @@ const DropdownHierarchy = () => {
     const fetchOrders = async () => {
       try {
         const res = await axios.post(
-          "http://localhost:8080/graphql",
+          "https://springboot-app-latest-r6w8.onrender.com/graphql",
           { query },
           { headers: { "Content-Type": "application/json" } }
         );

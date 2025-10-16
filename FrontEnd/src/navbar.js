@@ -35,7 +35,7 @@ function HeaderNavbar() {
             Spring Boot
             <img
               alt=""
-              src={`${process.env.PUBLIC_URL}/images/spring-boot-logo.png`}
+              src={`${process.env.PUBLIC_URL}/images/Spring Boot logo.png`}
               width="30"
               height="30"
               className="d-inline-block align-top"
