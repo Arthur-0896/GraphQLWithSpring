@@ -8,6 +8,7 @@ type Customer {
 	city: String!
 	state: String!
 	zipCode: String!
+	orders: [Order]!
 }
 
 type SalesPerson {
@@ -26,6 +27,24 @@ type Order {
 	orderId: ID!
 	customer: Customer
 	salesPerson: SalesPerson
+	orderLines: [OrderLine]!
+}
+
+type OrderLine {
+	orderLineId: ID!
+	order: Order
+	quantity: Int!
+	product: Product
+}
+
+type Product {
+	productId: String!
+	name: String!
+	size: Int!
+	variety: String!
+	price : Float!
+	status: String!
+	orderLine: [OrderLine]!
 }
 
 input CustomerInput {
@@ -41,10 +60,15 @@ input CustomerInput {
 
 type Query {
 	customers: [Customer]!
+	orders: [Order]!
+	products: [Product]!
+	orderLines: [OrderLine]!
+	salesPersons: [SalesPerson]!
+	
 	customerById(id: ID): Customer
 	customerByEmail(email: String): Customer
-	orders: [Order]!
 	orderById(id: ID): Order
+	productById(id: ID) : Product
 }
 
 type Mutation {

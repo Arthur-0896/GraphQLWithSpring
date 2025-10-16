@@ -1,26 +1,58 @@
-package com.gqlws.controller;
+package com.gqlws.entities;
 
-import com.gqlws.data.Customer;
+import java.util.List;
 
-public class CustomerInput {
-	// CUSTOMER_ID BIGINT PRIMARY KEY AUTO_INCREMENT,
-	// FIRST_NAME VARCHAR(64),
-	// LAST_NAME VARCHAR(64),
-	// EMAIL VARCHAR(128) UNIQUE,
-	// PHONE VARCHAR(32),
-	// ADDRESS VARCHAR(256),
-	// CITY VARCHAR(64),
-	// STATE CHAR(2),
-	// ZIPCODE VARCHAR(12)
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "CUSTOMERS")
+public class Customer {
+
+	@Id
+	@Column(name = "CUSTOMER_ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+
+	@Column(name = "FIRST_NAME")
 	private String firstName;
+
+	@Column(name = "LAST_NAME")
 	private String lastName;
+
+	@Column(name = "EMAIL")
 	private String email;
+
+	@Column(name = "PHONE")
 	private String phone;
+
+	@Column(name = "ADDRESS")
 	private String address;
+
+	@Column(name = "CITY")
 	private String city;
+
+	@Column(name = "STATE")
 	private String state;
+
+	@Column(name = "ZIPCODE")
 	private String zipCode;
+
+	@OneToMany(mappedBy = "customer")
+	private List<Order> orders;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public String getFirstName() {
 		return firstName;
@@ -82,22 +114,16 @@ public class CustomerInput {
 		return zipCode;
 	}
 
-	public void setZipcode(String zipcode) {
-		this.zipCode = zipcode;
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 
-	public Customer getCustomerEntity() {
-		Customer customer = new Customer();
-		
-		customer.setFirstName(this.firstName);
-		customer.setLastName(this.lastName);
-		customer.setEmail(this.email);
-		customer.setPhone(this.phone);
-		customer.setAddress(this.address);
-		customer.setCity(this.city);
-		customer.setState(this.state);
-		customer.setZipCode(this.zipCode);
-		
-		return customer;
+	public List<Order> getOrders() {
+		return orders;
 	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
 }

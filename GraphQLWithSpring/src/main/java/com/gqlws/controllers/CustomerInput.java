@@ -1,52 +1,26 @@
-package com.gqlws.data;
+package com.gqlws.controllers;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.gqlws.entities.Customer;
 
-@Entity
-@Table(name = "CUSTOMERS")
-public class Customer {
+public class CustomerInput {
+	// CUSTOMER_ID BIGINT PRIMARY KEY AUTO_INCREMENT,
+	// FIRST_NAME VARCHAR(64),
+	// LAST_NAME VARCHAR(64),
+	// EMAIL VARCHAR(128) UNIQUE,
+	// PHONE VARCHAR(32),
+	// ADDRESS VARCHAR(256),
+	// CITY VARCHAR(64),
+	// STATE CHAR(2),
+	// ZIPCODE VARCHAR(12)
 
-	@Id
-	@Column(name = "CUSTOMER_ID")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-
-	@Column(name = "FIRST_NAME")
 	private String firstName;
-
-	@Column(name = "LAST_NAME")
 	private String lastName;
-
-	@Column(name = "EMAIL")
 	private String email;
-
-	@Column(name = "PHONE")
 	private String phone;
-
-	@Column(name = "ADDRESS")
 	private String address;
-
-	@Column(name = "CITY")
 	private String city;
-
-	@Column(name = "STATE")
 	private String state;
-
-	@Column(name = "ZIPCODE")
 	private String zipCode;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	public String getFirstName() {
 		return firstName;
@@ -108,8 +82,22 @@ public class Customer {
 		return zipCode;
 	}
 
-	public void setZipCode(String zipCode) {
-		this.zipCode = zipCode;
+	public void setZipcode(String zipcode) {
+		this.zipCode = zipcode;
 	}
 
+	public Customer getCustomerEntity() {
+		Customer customer = new Customer();
+		
+		customer.setFirstName(this.firstName);
+		customer.setLastName(this.lastName);
+		customer.setEmail(this.email);
+		customer.setPhone(this.phone);
+		customer.setAddress(this.address);
+		customer.setCity(this.city);
+		customer.setState(this.state);
+		customer.setZipCode(this.zipCode);
+		
+		return customer;
+	}
 }

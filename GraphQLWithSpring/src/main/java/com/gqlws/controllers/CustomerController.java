@@ -1,12 +1,12 @@
-package com.gqlws.controller;
+package com.gqlws.controllers;
 
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
-import com.gqlws.data.Customer;
-import com.gqlws.data.CustomerRepository;
+import com.gqlws.entities.Customer;
+import com.gqlws.repositories.CustomerRepository;
 
 @Controller
 public class CustomerController {

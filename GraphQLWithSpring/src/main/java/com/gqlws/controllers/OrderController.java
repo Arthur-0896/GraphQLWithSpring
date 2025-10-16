@@ -1,10 +1,10 @@
-package com.gqlws.controller;
+package com.gqlws.controllers;
 
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
-import com.gqlws.data.Orders;
-import com.gqlws.data.OrdersRepository;
+import com.gqlws.entities.Order;
+import com.gqlws.repositories.OrdersRepository;
 
 @Controller
 public class OrderController {
@@ -17,7 +17,7 @@ public class OrderController {
 	}
 
 	@QueryMapping
-	public Iterable<Orders> orders() {
+	public Iterable<Order> orders() {
 		return this.ordersRepository.findAll();
 	}
 

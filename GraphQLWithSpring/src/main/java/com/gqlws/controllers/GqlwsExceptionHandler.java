@@ -1,4 +1,4 @@
-package com.gqlws.controller;
+package com.gqlws.controllers;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.graphql.execution.DataFetcherExceptionResolverAdapter;
