@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/GraphQLWithSpring/static/css/main.fb665e37.css",
-    "main.js": "/GraphQLWithSpring/static/js/main.0ee06ec6.js",
+    "main.js": "/GraphQLWithSpring/static/js/main.d81b8cc5.js",
     "static/js/453.d644e9d9.chunk.js": "/GraphQLWithSpring/static/js/453.d644e9d9.chunk.js",
     "index.html": "/GraphQLWithSpring/index.html",
     "main.fb665e37.css.map": "/GraphQLWithSpring/static/css/main.fb665e37.css.map",
-    "main.0ee06ec6.js.map": "/GraphQLWithSpring/static/js/main.0ee06ec6.js.map",
+    "main.d81b8cc5.js.map": "/GraphQLWithSpring/static/js/main.d81b8cc5.js.map",
     "453.d644e9d9.chunk.js.map": "/GraphQLWithSpring/static/js/453.d644e9d9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fb665e37.css",
-    "static/js/main.0ee06ec6.js"
+    "static/js/main.d81b8cc5.js"
   ]
 }
